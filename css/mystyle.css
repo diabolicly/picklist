@@ -1,0 +1,18 @@
+.myselectlist{
+	width: 100%;
+}
+
+table#mybtngroup{
+	text-align: center;
+	margin-left:15%;
+	margin-top: 20px;	
+}
+
+.mybtn{
+	margin: 5px;
+	font-weight: bold;
+	border: none;
+	background-color: #fff;
+	font-size: x-large;
+	padding: 0 50px 0 50px;
+}

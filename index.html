@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!-- Coded by Yue Li on 02/02/2017-->
+<html ng-app="app">
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="js/picklist.js"></script>
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/mystyle.css">
+</head>
+
+<body ng-controller="ExtController">
+<div class="container">
+
+	<form class="form-horizontal" name="test">
+
+		<div class="form-group col-md-12">
+			<ul class="nav nav-pills">
+				<li class="active"><a data-toggle="tab" href="#1" ng-click="getIndoor()">Indoor</a></li>
+				<li><a data-toggle="tab" href="#2" ng-click="getOutdoor()">Outdoor</a></li>
+				<li><a data-toggle="tab" href="#3" ng-click="getEco()">Eco</a></li>
+			</ul>
+		</div>
+
+		<div class="form-group" >
+			<div class="col-md-4">
+				<select class="myselectlist" multiple size="20" ng-model="tempList1" ng-options="x.label for x in toptions | filter: {validFor: theGroup} | orderBy: 'label'">
+				</select>
+				<!-- <select class="myselectlist" multiple size="20" ng-model="tempList1" > -->
+					<!-- <option ng-repeat="x in toptions | filter: {group: theGroup} | orderBy: 'label'" value={{x}}>{{x.label}}</option> -->
+				<!-- </select> -->
+			</div>
+			<div class="col-md-2">
+				<table id="mybtngroup">
+					<tr>
+						<td><button class="btn-default mybtn" ng-click="rightShift()">&gt;</button></td>
+					</tr>
+					<tr>
+						<td><button class="btn-default mybtn" ng-click="leftShift()">&lt;</button></td>
+					</tr>
+				</table>
+			</div>
+			<div class="col-md-4">
+				<select class="myselectlist" multiple size="20" ng-model="tempList2" ng-options="x.label group by x.validFor for x in tselected | orderBy: 'label'">
+				</select>
+			</div>
+			
+		</div>
+
+	</form>
+</div>
+</body>
+</html>
